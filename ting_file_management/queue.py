@@ -8,8 +8,12 @@ class Queue:
     def enqueue(self, value):
         self._data.append(value)
 
+    def is_empty(self):
+        return self._data == []
+
     def dequeue(self):
-        return self._data.pop(0)
+        if not self.is_empty():
+            return self._data.pop(0)
 
     def search(self, index):
         if index < 0 or index >= len(self):
